@@ -2,6 +2,9 @@
 
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
+use Laravel\Socialite\Facades\Socialite;
+use App\Http\Controllers\Auth\GoogleController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -24,3 +27,7 @@ Route::post('/update-profile/{id}', [App\Http\Controllers\HomeController::class,
 Route::post('/update-password/{id}', [App\Http\Controllers\HomeController::class, 'updatePassword'])->name('updatePassword');
 
 Route::get('{any}', [App\Http\Controllers\HomeController::class, 'index'])->name('index');
+
+
+Route::get('auth/google', [GoogleController::class, 'redirectToGoogle'])->name('auth.google');
+Route::get('auth/google/callback', [GoogleController::class, 'handleGoogleCallback'])->name('auth.google.callback');
