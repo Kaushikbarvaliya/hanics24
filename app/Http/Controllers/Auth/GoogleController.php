@@ -8,41 +8,55 @@ use Laravel\Socialite\Facades\Socialite;
 use App\Models\User;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Log;
 
-class GoogleController extends Controller
-{
+class GoogleController extends Controller {
     public function redirectToGoogle()
     {
         return Socialite::driver('google')->redirect();
     }
 
-    public function handleGoogleCallback(Request $request)
-    {
+    public function handleGoogleCallback(Request $request) {
         try {
-            $googleUser = Socialite::driver('google')->user();
+            $googleUser = Socialite::driver('google')->stateless()->user();
             
-            // Check if user already exists in your database
-            $user = User::where('email', $googleUser->getEmail())->first();
+            if(!empty($googleUser) && isset($googleUser->id,$googleUser->email)){
 
-            if ($user) {
-                // Log the user in
-                Auth::login($user);
-            } else {
-                // Create a new user if not found
-                $user = User::create([
-                    'name' => $googleUser->getName(),
-                    'email' => $googleUser->getEmail(),
-                    'password' => bcrypt(Str::random(16)), // Generate a random password
-                ]);
+                $googleId = $googleUser->id;
+                $googleUserData = $googleUser->user??'';
                 
+                $user = User::updateOrCreate([
+                    'google_id' => $googleId,
+                    'email' => $googleUser->getEmail()
+                ], [
+                    'firstname' => $googleUserData->given_name??'',
+                    'lastname' => $googleUserData->family_name??'',
+                    'username' => $googleUser->getName(),
+                    'email' => $googleUser->getEmail(),
+                    'avatar' => $googleUserData->picture??'',
+                    'password' => bcrypt(Str::random(16)),
+                    'google_id' => $googleId
+                ]);
+
                 Auth::login($user);
+
+                return redirect()->intended('dashboard')->with('success', 'You have successfully logged in with Google!');
             }
 
-            return redirect()->intended('dashboard')->with('success', 'You have successfully logged in!');
+        } catch (\Laravel\Socialite\Two\InvalidStateException $e) {
+            Log::error('OAuth state mismatch: ' . $e->getMessage());
+            return redirect()->route('login')->with('error', 'Invalid state. Please try logging in again.');
+
+        } catch (\GuzzleHttp\Exception\ClientException $e) {
+            Log::error('Google API Client Exception: ' . $e->getMessage());
+            return redirect()->route('login')->with('error', 'Unable to authenticate with Google. Please try again later.');
+
         } catch (\Exception $e) {
-            return redirect()->route('root')->with('error', 'Failed to login, please try again.');
+            Log::error('General Exception during Google OAuth: ' . $e->getMessage());
+            return redirect()->route('login')->with('error', 'An unexpected error occurred. Please try again later.');
         }
     }
+
 
 
 }

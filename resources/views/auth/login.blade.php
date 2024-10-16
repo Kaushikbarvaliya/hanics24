@@ -35,17 +35,6 @@
             <div class="row justify-content-center">
                 <div class="col-md-8 col-lg-6 col-xl-5">
                     <div class="card mt-4">
-                        @if (session('success'))
-                            <div class="alert alert-success">
-                                {{ session('success') }}
-                            </div>
-                        @endif
-
-                        @if (session('error'))
-                            <div class="alert alert-danger">
-                                {{ session('error') }}
-                            </div>
-                        @endif
 
                         <div class="card-body p-4">
                             <div class="text-center mt-2">
@@ -89,6 +78,18 @@
                                     <div class="mt-4">
                                         <button class="btn btn-success w-100" type="submit">Sign In</button>
                                     </div>
+
+                                    @if (session('success'))
+                                        <div class="alert alert-success my-2">
+                                            {{ session('success') }}
+                                        </div>
+                                    @endif
+    
+                                    @if (session('error'))
+                                        <div class="alert alert-danger my-2">
+                                            {{ session('error') }}
+                                        </div>
+                                    @endif
 
                                     <div class="mt-4 text-center">
                                         <div class="signin-other-title">

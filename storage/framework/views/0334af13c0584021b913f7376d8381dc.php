@@ -34,19 +34,6 @@
             <div class="row justify-content-center">
                 <div class="col-md-8 col-lg-6 col-xl-5">
                     <div class="card mt-4">
-                        <?php if(session('success')): ?>
-                            <div class="alert alert-success">
-                                <?php echo e(session('success')); ?>
-
-                            </div>
-                        <?php endif; ?>
-
-                        <?php if(session('error')): ?>
-                            <div class="alert alert-danger">
-                                <?php echo e(session('error')); ?>
-
-                            </div>
-                        <?php endif; ?>
 
                         <div class="card-body p-4">
                             <div class="text-center mt-2">
@@ -118,6 +105,25 @@ unset($__errorArgs, $__bag); ?>
                                     <div class="mt-4">
                                         <button class="btn btn-success w-100" type="submit">Sign In</button>
                                     </div>
+
+                                    <?php if(session('success')): ?>
+                                        <div class="alert alert-success my-2">
+                                            <?php echo e(session('success')); ?>
+
+                                        </div>
+                                        <script type="text/javascript">
+                                            setTimeout(function() {
+                                                window.location.href = "<?php echo e(url('/dashboard')); ?>";
+                                            }, 3000);
+                                        </script>
+                                    <?php endif; ?>
+    
+                                    <?php if(session('error')): ?>
+                                        <div class="alert alert-danger my-2">
+                                            <?php echo e(session('error')); ?>
+
+                                        </div>
+                                    <?php endif; ?>
 
                                     <div class="mt-4 text-center">
                                         <div class="signin-other-title">
