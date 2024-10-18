@@ -10,4 +10,4 @@
 <!-- custom Css-->
 <link href="<?php echo e(URL::asset('build/css/custom.min.css')); ?>" id="app-style" rel="stylesheet" type="text/css" />
 
-<?php /**PATH D:\XAMPP\htdocs\hanics24\resources\views/layouts/head-css.blade.php ENDPATH**/ ?>
+<?php /**PATH /Users/kaushikbarvaliya/hanics24/resources/views/layouts/head-css.blade.php ENDPATH**/ ?>

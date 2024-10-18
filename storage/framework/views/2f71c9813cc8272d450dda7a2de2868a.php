@@ -756,4 +756,4 @@
         </div><!-- /.modal-content -->
     </div><!-- /.modal-dialog -->
 </div><!-- /.modal -->
-<?php /**PATH D:\XAMPP\htdocs\hanics24\resources\views/layouts/topbar.blade.php ENDPATH**/ ?>
+<?php /**PATH /Users/kaushikbarvaliya/hanics24/resources/views/layouts/topbar.blade.php ENDPATH**/ ?>

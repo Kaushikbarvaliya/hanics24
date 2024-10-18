@@ -24,16 +24,16 @@ class GoogleController extends Controller {
 
                 $googleId = $googleUser->id;
                 $googleUserData = $googleUser->user??'';
-                
+
                 $user = User::updateOrCreate([
                     'google_id' => $googleId,
                     'email' => $googleUser->getEmail()
                 ], [
-                    'firstname' => $googleUserData->given_name??'',
-                    'lastname' => $googleUserData->family_name??'',
+                    'firstname' => $googleUserData['given_name']??'',
+                    'lastname' => $googleUserData['family_name']??'',
                     'username' => $googleUser->getName(),
                     'email' => $googleUser->getEmail(),
-                    'avatar' => $googleUserData->picture??'',
+                    'avatar' => $googleUserData['picture']??'',
                     'password' => bcrypt(Str::random(16)),
                     'google_id' => $googleId
                 ]);

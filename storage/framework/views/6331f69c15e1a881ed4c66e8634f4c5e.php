@@ -807,4 +807,4 @@
         </div>
     </div>
 </div>
-<?php /**PATH D:\XAMPP\htdocs\hanics24\resources\views/layouts/customizer.blade.php ENDPATH**/ ?>
+<?php /**PATH /Users/kaushikbarvaliya/hanics24/resources/views/layouts/customizer.blade.php ENDPATH**/ ?>

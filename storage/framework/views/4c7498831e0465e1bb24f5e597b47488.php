@@ -1012,4 +1012,4 @@
 <!-- Left Sidebar End -->
 <!-- Vertical Overlay-->
 <div class="vertical-overlay"></div>
-<?php /**PATH D:\XAMPP\htdocs\hanics24\resources\views/layouts/sidebar.blade.php ENDPATH**/ ?>
+<?php /**PATH /Users/kaushikbarvaliya/hanics24/resources/views/layouts/sidebar.blade.php ENDPATH**/ ?>

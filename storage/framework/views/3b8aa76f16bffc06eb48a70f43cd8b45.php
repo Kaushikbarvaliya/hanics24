@@ -43,4 +43,4 @@
 </body>
 
 </html>
-<?php /**PATH D:\XAMPP\htdocs\hanics24\resources\views/layouts/master.blade.php ENDPATH**/ ?>
+<?php /**PATH /Users/kaushikbarvaliya/hanics24/resources/views/layouts/master.blade.php ENDPATH**/ ?>

@@ -12,4 +12,4 @@
         </div>
     </div>
 </footer>
-<?php /**PATH D:\XAMPP\htdocs\hanics24\resources\views/layouts/footer.blade.php ENDPATH**/ ?>
+<?php /**PATH /Users/kaushikbarvaliya/hanics24/resources/views/layouts/footer.blade.php ENDPATH**/ ?>

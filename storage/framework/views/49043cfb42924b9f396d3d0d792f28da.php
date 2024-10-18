@@ -6,4 +6,4 @@
 <script src="<?php echo e(URL::asset('build/js/plugins.js')); ?>"></script>
 <?php echo $__env->yieldContent('script'); ?>
 <?php echo $__env->yieldContent('script-bottom'); ?>
-<?php /**PATH D:\XAMPP\htdocs\hanics24\resources\views/layouts/vendor-scripts.blade.php ENDPATH**/ ?>
+<?php /**PATH /Users/kaushikbarvaliya/hanics24/resources/views/layouts/vendor-scripts.blade.php ENDPATH**/ ?>

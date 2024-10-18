@@ -111,11 +111,6 @@ unset($__errorArgs, $__bag); ?>
                                             <?php echo e(session('success')); ?>
 
                                         </div>
-                                        <script type="text/javascript">
-                                            setTimeout(function() {
-                                                window.location.href = "<?php echo e(url('/dashboard')); ?>";
-                                            }, 3000);
-                                        </script>
                                     <?php endif; ?>
     
                                     <?php if(session('error')): ?>
@@ -177,4 +172,4 @@ unset($__errorArgs, $__bag); ?>
 
 <?php $__env->stopSection(); ?>
 
-<?php echo $__env->make('layouts.master-without-nav', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH D:\XAMPP\htdocs\hanics24\resources\views/auth/login.blade.php ENDPATH**/ ?>
+<?php echo $__env->make('layouts.master-without-nav', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH /Users/kaushikbarvaliya/hanics24/resources/views/auth/login.blade.php ENDPATH**/ ?>
