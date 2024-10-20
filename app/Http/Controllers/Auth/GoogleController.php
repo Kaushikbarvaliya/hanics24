@@ -39,7 +39,7 @@ class GoogleController extends Controller {
                 ]);
 
                 Auth::login($user);
-
+                
                 return redirect()->intended('dashboard')->with('success', 'You have successfully logged in with Google!');
             }
 
