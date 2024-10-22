@@ -31,3 +31,6 @@ Route::get('{any}', [App\Http\Controllers\HomeController::class, 'index'])->name
 
 Route::get('auth/google', [GoogleController::class, 'redirectToGoogle'])->name('auth.google');
 Route::get('auth/google/callback', [GoogleController::class, 'handleGoogleCallback'])->name('auth.google.callback');
+
+// pages
+Route::get('theator/list', [App\Http\Controllers\TheaterController::class, 'index'])->name('theator.list');

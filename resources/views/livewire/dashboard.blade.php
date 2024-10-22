@@ -1,4 +1,4 @@
-<div class="row">
+<div class="row" wire:init="fetchDashboardData">
     <div class="col-xl-3 col-md-6">
         <!-- card -->
         <div class="card card-animate">
@@ -11,11 +11,11 @@
                 <div class="d-flex align-items-end justify-content-between mt-4">
                     <div>
                         <!-- Loader while loading data for device alerts -->
-                        <p wire:loading wire:target="totalDataCount" class="loader">Loading...</p>
+                        <p wire:loading wire:target="loading">Loading...</p>
                         <!-- Display data when loaded -->
-                        <h4 wire:loading.remove wire:target="totalDataCount" class="fs-22 fw-semibold ff-secondary mb-4">
+                        <h4 wire:loading.remove wire:target="loading" class="fs-22 fw-semibold ff-secondary mb-4">
                             @if(!empty($totalDataCount) && $totalDataCount['device_alerts'] != "")
-                                <span class="counter-value" data-target="{{$totalDataCount['device_alerts']}}">0</span>
+                                <span class="counter-value" data-target="{{$totalDataCount['device_alerts']}}">{{$totalDataCount['device_alerts']}}</span>
                             @else
                                 <span>N/A</span>
                             @endif
@@ -43,11 +43,11 @@
                 <div class="d-flex align-items-end justify-content-between mt-4">
                     <div>
                         <!-- Loader while loading data for device alerts -->
-                        <p wire:loading wire:target="totalDataCount" class="loader">Loading...</p>
+                        <p wire:loading wire:target="loading">Loading...</p>
                         <!-- Display data when loaded -->
-                        <h4 wire:loading.remove wire:target="totalDataCount" class="fs-22 fw-semibold ff-secondary mb-4">
-                            @if(!empty($totalDataCount) && $totalDataCount['device_alerts'] != "")
-                                <span class="counter-value" data-target="{{$totalDataCount['device_alerts']}}">0</span>
+                        <h4 wire:loading.remove wire:target="loading" class="fs-22 fw-semibold ff-secondary mb-4">
+                            @if(!empty($totalDataCount) && $totalDataCount['num_devices'] != "")
+                                <span class="counter-value" data-target="{{$totalDataCount['num_devices']}}">{{$totalDataCount['num_devices']}}</span>
                             @else
                                 <span>N/A</span>
                             @endif
@@ -75,11 +75,11 @@
                 <div class="d-flex align-items-end justify-content-between mt-4">
                     <div>
                         <!-- Loader while loading data for device alerts -->
-                        <p wire:loading wire:target="fetchDashboardData" class="loader">Loading...</p>
+                        <p wire:loading wire:target="loading">Loading...</p>
                         <!-- Display data when loaded -->
-                        <h4 wire:loading.remove wire:target="totalDataCount" class="fs-22 fw-semibold ff-secondary mb-4">
-                            @if(!empty($totalDataCount) && $totalDataCount['device_alerts'] != "")
-                                <span class="counter-value" data-target="{{$totalDataCount['device_alerts']}}">0</span>
+                        <h4 wire:loading.remove wire:target="loading" class="fs-22 fw-semibold ff-secondary mb-4">
+                            @if(!empty($totalDataCount) && $totalDataCount['num_locations'] != "")
+                                <span class="counter-value" data-target="{{$totalDataCount['num_locations']}}">{{$totalDataCount['num_locations']}}</span>
                             @else
                                 <span>N/A</span>
                             @endif
@@ -107,11 +107,11 @@
                 <div class="d-flex align-items-end justify-content-between mt-4">
                     <div>
                         <!-- Loader while loading data for device alerts -->
-                        <p wire:loading wire:target="totalDataCount" class="loader">Loading...</p>
+                        <p wire:loading wire:target="loading">Loading...</p>
                         <!-- Display data when loaded -->
-                        <h4 wire:loading.remove wire:target="totalDataCount" class="fs-22 fw-semibold ff-secondary mb-4">
-                            @if(!empty($totalDataCount) && $totalDataCount['device_alerts'] != "")
-                                <span class="counter-value" data-target="{{$totalDataCount['device_alerts']}}">0</span>
+                        <h4 wire:loading.remove wire:target="loading" class="fs-22 fw-semibold ff-secondary mb-4">
+                            @if(!empty($totalDataCount) && $totalDataCount['num_theaters'] != "")
+                                <span class="counter-value" data-target="{{$totalDataCount['num_theaters']}}">{{$totalDataCount['num_theaters']}}</span>
                             @else
                                 <span>N/A</span>
                             @endif
