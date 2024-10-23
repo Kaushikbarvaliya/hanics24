@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class TheaterController extends Controller
+class DeviceController extends Controller
 {
     /**
      * Create a new controller instance.
@@ -23,6 +23,6 @@ class TheaterController extends Controller
     {
         session(['api_token' => '9b8f63314b764a8193bc350cc68e03d1']);
         session(['client_token' => '29cee58b02874a408adc2cb0d2fe1017']);
-        return view('pages/theators-list');
+        return view('pages/device-list');
     }
 }

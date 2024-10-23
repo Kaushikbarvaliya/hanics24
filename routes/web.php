@@ -34,3 +34,5 @@ Route::get('auth/google/callback', [GoogleController::class, 'handleGoogleCallba
 
 // pages
 Route::get('theator/list', [App\Http\Controllers\TheaterController::class, 'index'])->name('theator.list');
+Route::get('device/list', [App\Http\Controllers\DeviceController::class, 'index'])->name('device.list');
+Route::get('service/list', [App\Http\Controllers\ServiceController::class, 'index'])->name('service.list');

@@ -42,7 +42,19 @@
 
                 <li class="nav-item">
                     <a class="nav-link menu-link {{ Request::is('theator/list') ? 'active' : '' }}" href="{{route('theator.list')}}">
-                        <i class="ri-home-3-line"></i> <span>Theater List</span>
+                        <i class="ri-home-3-line"></i> <span>Theaters</span>
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link menu-link {{ Request::is('device/list') ? 'active' : '' }}" href="{{route('device.list')}}">
+                        <i class="ri-device-line"></i> <span>Devices</span>
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link menu-link {{ Request::is('service/list') ? 'active' : '' }}" href="{{route('service.list')}}">
+                        <i class="ri-service-line"></i> <span>Services</span>
                     </a>
                 </li>
 

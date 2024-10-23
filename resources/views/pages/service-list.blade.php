@@ -13,7 +13,7 @@
 Dashboard
 @endslot
 @slot('title')
-Theators
+Services
 @endslot
 @endcomponent
 <div class="row">
@@ -24,7 +24,7 @@ Theators
                 <div class="row g-4 align-items-center">
                     <div class="col-sm">
                         <div>
-                            <h5 class="card-title mb-0">Theators List</h5>
+                            <h5 class="card-title mb-0">Services List</h5>
                         </div>
                     </div>
                 </div>
@@ -35,12 +35,16 @@ Theators
             <div class="card-body">
                 <div>
                     <div class="table-responsive table-card mb-1">
-                        <table class="table table-bordered table-order" id="theater_dataTable" width="100%" cellspacing="0">
+                        <table class="table table-bordered table-order" id="services_dataTable" width="100%" cellspacing="0">
                             <thead class="table-light text-muted">
                                 <tr>
-                                    <th>Theater ID</th>
-                                    <th>Theater Name</th>
-                                    <th>Site Name</th>
+                                    <th>Screen ID</th>
+                                    <th>Device ID</th>
+                                    <th>Device Name</th>
+                                    <th>Device Serial</th>
+                                    <th>Start Time</th>
+                                    <th>End Time</th>
+                                    <th>Screen Name</th>
                                 </tr>
                             </thead>
                             <tbody class="list form-check-all">
@@ -80,5 +84,5 @@ Theators
 </script>
 <script src="{{ URL::asset('build/js/jquery-3.7.1.min.js') }}"></script>
 <script src="{{ URL::asset('build/js/dataTables.min.js') }}"></script>
-<script src="{{ URL::asset('build/js/pages/theaterlist.js') }}"></script>
+<script src="{{ URL::asset('build/js/pages/servicelist.js') }}"></script>
 @endsection

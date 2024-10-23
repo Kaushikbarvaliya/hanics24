@@ -209,22 +209,22 @@
   },
   "resources/scss/app.scss": {
     "file": "css/app.min.css",
-    "isEntry": true,
-    "src": "resources/scss/app.scss"
+    "src": "resources/scss/app.scss",
+    "isEntry": true
   },
   "resources/scss/bootstrap.scss": {
     "file": "css/bootstrap.min.css",
-    "isEntry": true,
-    "src": "resources/scss/bootstrap.scss"
+    "src": "resources/scss/bootstrap.scss",
+    "isEntry": true
   },
   "resources/scss/custom.scss": {
     "file": "css/custom.min.css",
-    "isEntry": true,
-    "src": "resources/scss/custom.scss"
+    "src": "resources/scss/custom.scss",
+    "isEntry": true
   },
   "resources/scss/icons.scss": {
     "file": "css/icons.min.css",
-    "isEntry": true,
-    "src": "resources/scss/icons.scss"
+    "src": "resources/scss/icons.scss",
+    "isEntry": true
   }
 }
