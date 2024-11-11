@@ -40,7 +40,7 @@ $(document).ready(function () {
             data.api_token = apiToken;
             data.client_token = apiClientToken;
             $.ajax({
-                url: apiUrl+'services/get_service_list?theater_id=1&cloud_screen_id=1&service_status=1&page=0',
+                url: apiUrl+'services/get_service_list?theater_id=7&cloud_screen_id=1&service_status=1',
                 type: 'GET',
                 data: data,
                 dataType:'JSON',
