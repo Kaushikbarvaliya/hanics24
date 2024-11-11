@@ -61,13 +61,9 @@ class LoginController extends Controller
             $user = Auth::user();
 
             // Call the third-party API to retrieve the token
-            $thirdPartyToken = $this->getThirdPartyToken($user);
+            $thirdPartyToken = $this->setThirdPartyToken($user);
             
-            if (isset($thirdPartyToken,$thirdPartyToken['status']) && $thirdPartyToken['status'] == "200") {
-
-                // Store the token in the session (or handle it as needed)
-                session(['api_token' => $thirdPartyToken['api_token']??'']);
-                session(['client_token' => $thirdPartyToken['api_token']??'']);
+            if (isset($thirdPartyToken) && $thirdPartyToken) {
 
                 // Redirect to intended location or home
                 return redirect()->intended($this->redirectTo);
@@ -90,7 +86,7 @@ class LoginController extends Controller
      * @param $user
      * @return string|null
      */
-    protected function getThirdPartyToken($user)
+    public static function setThirdPartyToken($user)
     {
          // Define the default body
          $body = [
@@ -112,7 +108,15 @@ class LoginController extends Controller
         if ($response->successful()) {
             $responseData = $response->json();
             if (isset($responseData['status']) && $responseData['status'] == "200") {
-                return $responseData; // Return the successful response
+                if (isset($responseData,$responseData['status']) && $responseData['status'] == "200") {
+
+                    // Store the token in the session (or handle it as needed)
+                    session(['api_token' => $responseData['api_token']??'']);
+                    session(['client_token' => $responseData['api_token']??'']);
+    
+                    // Redirect to intended location or home
+                    return true;
+                }
             }
         }
 

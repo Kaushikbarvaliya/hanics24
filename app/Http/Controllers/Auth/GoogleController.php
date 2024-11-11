@@ -9,6 +9,8 @@ use App\Models\User;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Log;
+use App\Http\Controllers\Auth\LoginController;
+
 
 class GoogleController extends Controller {
     public function redirectToGoogle()
@@ -39,8 +41,9 @@ class GoogleController extends Controller {
                 ]);
 
                 Auth::login($user);
-                
-                return redirect()->intended('dashboard')->with('success', 'You have successfully logged in with Google!');
+                LoginController::setThirdPartyToken($user);
+
+                return redirect()->intended('/')->with('success', 'You have successfully logged in with Google!');
             }
 
         } catch (\Laravel\Socialite\Two\InvalidStateException $e) {
