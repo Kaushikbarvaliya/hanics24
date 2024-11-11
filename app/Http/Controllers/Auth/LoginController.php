@@ -112,10 +112,10 @@ class LoginController extends Controller
 
                     // Store the token in the session (or handle it as needed)
                     session(['api_token' => $responseData['api_token']??'']);
-                    session(['client_token' => $responseData['api_token']??'']);
+                    session(['client_token' => $responseData['client_token']??'']);
     
                     // Redirect to intended location or home
-                    return true;
+                    return $responseData;
                 }
             }
         }
