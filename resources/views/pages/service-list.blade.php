@@ -29,37 +29,32 @@ Services
                     </div>
                 </div>
             </div>
-            <div class="card-body border-bottom-dashed border-bottom">
-                
-            </div>
             <div class="card-body">
-                <div>
-                    <div class="table-responsive table-card mb-1">
-                        <table class="table table-bordered table-order" id="services_dataTable" width="100%" cellspacing="0">
-                            <thead class="table-light text-muted">
-                                <tr>
-                                    <th>Screen ID</th>
-                                    <th>Device ID</th>
-                                    <th>Device Name</th>
-                                    <th>Device Serial</th>
-                                    <th>Start Time</th>
-                                    <th>End Time</th>
-                                    <th>Screen Name</th>
-                                </tr>
-                            </thead>
-                            <tbody class="list form-check-all">
-                            </tbody>
-                        </table>
-                        
-                        <div class="noresult" style="display: none">
-                            <div class="text-center">
-                                <lord-icon src="https://cdn.lordicon.com/msoeawqm.json" trigger="loop" colors="primary:#121331,secondary:#08a88a" style="width:75px;height:75px">
-                                </lord-icon>
-                                <h5 class="mt-2">Sorry! No Result Found</h5>
-                                <p class="text-muted mb-0">We've searched more than 150+ customer We
-                                    did not find any
-                                    customer for you search.</p>
-                            </div>
+                <div class="table-responsive table-card mb-1">
+                    <table class="table align-middle table-nowrap table-striped-columns table-order" id="services_dataTable" width="100%" cellspacing="0">
+                        <thead class="table-light text-muted">
+                            <tr>
+                                <th>Screen ID</th>
+                                <th>Device ID</th>
+                                <th>Device Name</th>
+                                <th>Device Serial</th>
+                                <th>Start Time</th>
+                                <th>End Time</th>
+                                <th>Screen Name</th>
+                            </tr>
+                        </thead>
+                        <tbody class="list form-check-all">
+                        </tbody>
+                    </table>
+                    
+                    <div class="noresult" style="display: none">
+                        <div class="text-center">
+                            <lord-icon src="https://cdn.lordicon.com/msoeawqm.json" trigger="loop" colors="primary:#121331,secondary:#08a88a" style="width:75px;height:75px">
+                            </lord-icon>
+                            <h5 class="mt-2">Sorry! No Result Found</h5>
+                            <p class="text-muted mb-0">We've searched more than 150+ customer We
+                                did not find any
+                                customer for you search.</p>
                         </div>
                     </div>
                 </div>

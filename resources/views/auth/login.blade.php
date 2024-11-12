@@ -93,11 +93,11 @@
 
                                     <div class="mt-4 text-center">
                                         <div class="signin-other-title">
-                                            <h5 class="fs-13 mb-4 title">Sign In with</h5>
+                                            <h5 class="fs-13 mb-4 title">Login In with</h5>
                                         </div>
                                         <div>
                                             <!-- <button type="button" class="btn btn-primary btn-icon waves-effect waves-light"><i class="ri-facebook-fill fs-16"></i></button> -->
-                                            <a href="{{ route('auth.google') }}" class="btn btn-danger btn-icon waves-effect waves-light"><i class="ri-google-fill fs-16"></i></a>
+                                            <a href="{{ route('auth.google') }}" class="btn btn-danger waves-effect waves-light d-inline-flex align-items-center"><i class="ri-google-fill fs-16 me-1"></i> Login with Google</a>
                                             <!-- <button type="button" class="btn btn-dark btn-icon waves-effect waves-light"><i class="ri-github-fill fs-16"></i></button> -->
                                             <!-- <button type="button" class="btn btn-info btn-icon waves-effect waves-light"><i class="ri-twitter-fill fs-16"></i></button> -->
                                         </div>
@@ -123,7 +123,7 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="text-center">
-                        <p class="mb-0 text-muted">&copy; <script>document.write(new Date().getFullYear())</script> Velzon. Crafted with <i class="mdi mdi-heart text-danger"></i> by Themesbrand</p>
+                        <!-- <p class="mb-0 text-muted">&copy; <script>document.write(new Date().getFullYear())</script> Velzon. Crafted with <i class="mdi mdi-heart text-danger"></i> by Themesbrand</p> -->
                     </div>
                 </div>
             </div>
