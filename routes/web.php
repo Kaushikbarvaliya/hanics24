@@ -33,6 +33,7 @@ Route::get('auth/google', [GoogleController::class, 'redirectToGoogle'])->name('
 Route::get('auth/google/callback', [GoogleController::class, 'handleGoogleCallback'])->name('auth.google.callback');
 
 // pages
-Route::get('theator/list', [App\Http\Controllers\TheaterController::class, 'index'])->name('theator.list');
+Route::get('theator/list', [App\Http\Controllers\TheatorController::class, 'index'])->name('theator.list');
+Route::get('theator/graph', [App\Http\Controllers\TheatorController::class, 'graph'])->name('theator.graph');
 Route::get('device/list', [App\Http\Controllers\DeviceController::class, 'index'])->name('device.list');
 Route::get('service/list', [App\Http\Controllers\ServiceController::class, 'index'])->name('service.list');

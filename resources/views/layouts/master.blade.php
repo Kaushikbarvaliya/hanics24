@@ -40,8 +40,9 @@
     @include('layouts.customizer')
 
     <!-- JAVASCRIPT -->
-    @include('layouts.vendor-scripts')
     @livewireScripts
+    @include('layouts.vendor-scripts')
+    @stack('scripts')
 </body>
 
 </html>

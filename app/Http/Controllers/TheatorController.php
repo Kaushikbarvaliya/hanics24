@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class TheaterController extends Controller
+class TheatorController extends Controller
 {
     /**
      * Create a new controller instance.
@@ -22,5 +22,9 @@ class TheaterController extends Controller
     public function index(Request $request)
     {
         return view('pages/theators-list');
+    }
+
+    public function graph(Request $request){
+        return view('pages/theator-graph');
     }
 }
