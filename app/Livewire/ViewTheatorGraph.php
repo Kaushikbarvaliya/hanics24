@@ -8,7 +8,6 @@ use Illuminate\Support\Facades\Log;
 
 class ViewTheatorGraph extends Component
 {
-    public $loading = true;
     public $selectedTheater = null;
     public $selectedScreen = null;
     public $screens = [];
@@ -45,7 +44,6 @@ class ViewTheatorGraph extends Component
         } catch (\Exception $e) {
             Log::error('API call failed: ' . $e->getMessage());
         }
-        $this->loading = true;
     }
 
     public function updatedSelectedTheater($theaterId)
@@ -115,7 +113,6 @@ class ViewTheatorGraph extends Component
         } catch (\Exception $e) {
             Log::error('API call failed: ' . $e->getMessage());
         }
-        $this->loading = true;
 
     }
 

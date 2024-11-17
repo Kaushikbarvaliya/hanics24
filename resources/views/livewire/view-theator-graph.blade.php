@@ -31,9 +31,8 @@
             </div><!-- end card header -->
             
             <div class="card-body">
-                <div class="" wire:loading wire:target="loading">Loading...</div>
-                <div wire:loading.remove wire:target="loading" id="color_heatmap" data-colors='["--vz-info", "--vz-success", "--vz-primary", "--vz-warning"]'
-                class="apex-charts" dir="ltr"></div>
+                <div class="" wire:loading wire:target="selectedTheater,selectedScreen">Loading...</div>
+                <div  wire:loading.remove wire:target="selectedTheater,selectedScreen" id="theators_heatmap" class="apex-charts" dir="ltr"></div>
             </div><!-- end card-body -->
         </div><!-- end card -->
     </div>
