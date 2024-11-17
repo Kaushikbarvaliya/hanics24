@@ -23,12 +23,8 @@ Graph
 @endslot
 @endcomponent
 <div class="row">
-    <div class="col-lg-12">
-        <div class="card" id="customerList">
-            <div class="card-body">
-                <livewire:viewtheatorgraph />
-            </div>
-        </div>
+    <div class="col-lg-12" id="customerList">
+        <livewire:viewtheatorgraph />
     </div>
     <!--end col-->
 </div>
@@ -78,7 +74,7 @@ Graph
             // height: 350,
             type: 'heatmap',
             toolbar: {
-                show: true
+                show: false
             }
         },  
         plotOptions: {
@@ -89,7 +85,7 @@ Graph
                 useFillColorAsStroke: true,
                 colorScale: {
                     ranges: [
-                        { from: -100, to: 0 , color: '#f4f4f4', name: 'Available' },
+                        { from: -100, to: 0 , color: '#f3f3f9', name: 'Available' },
                         { from: 1, to: 100 , color: '#00A100', name: 'Booked' },
                     ]
                 }
@@ -99,14 +95,11 @@ Graph
             enabled: false
         },
         stroke: {
-            width: 1
+            width: 2
         },
-        title: {
-            text: 'HeatMap Chart with Color Range',
-            style: {
-                fontWeight: 500,
-            },
-        },
+        legend: {
+            show: false,
+        }
     };
 
     var theatorChart = new ApexCharts(document.querySelector("#theators_heatmap"), options);

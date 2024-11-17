@@ -35,3 +35,32 @@
 div.dt-bootstrap5.dt-container.dt-empty-footer .dt-scroll-body {
     border-bottom: solid 1px #e9ebec;
 }
+
+.available-screen-group {
+    margin-bottom: -10px;
+}
+
+.available-list__item {
+    position: relative;
+}
+
+.available-list__item .form-check-input {
+    position: absolute;
+    opacity: 0;
+    visibility: hidden;
+    margin: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.available-list__item .form-check-label {
+    background-color: #e2e5ed;
+    color: #405189;
+    padding:  0.25rem 0.5rem;
+    border-radius: 0.2rem;
+}
+
+.available-list__item .form-check-input:checked ~ .form-check-label {
+    background-color: #405189;
+    color: #fff;
+}

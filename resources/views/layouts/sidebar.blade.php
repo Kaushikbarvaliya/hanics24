@@ -41,19 +41,9 @@
                 <li class="menu-title"><i class="ri-more-fill"></i> <span>@lang('translation.pages')</span></li>
 
                 <li class="nav-item  {{ Request::is('theator/list', 'theator/graph') ? 'active' : '' }}">
-                    <a class="nav-link menu-link" href="#sidebarApps" data-bs-toggle="collapse" role="button" aria-expanded="{{ Request::is('theator/list', 'theator/graph') ? 'true' : 'false' }}" aria-controls="sidebarApps">
+                    <a class="nav-link menu-link {{ Request::is('theator/graph') ? 'active' : '' }}" href="{{route('theator.graph')}}">
                         <i class="ri-apps-2-line"></i> <span>Theaters</span>
-                    </a> 
-                    <div class="collapse menu-dropdown  {{ Request::is('theator/list', 'theator/graph') ? 'collapse show' : '' }}" id="sidebarApps">
-                        <ul class="nav nav-sm flex-column">
-                            <li class="nav-item">
-                                <a href="{{route('theator.list')}}" class="nav-link {{ Request::is('theator/list') ? 'active' : '' }}">Lists</a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="{{route('theator.graph')}}" class="nav-link {{ Request::is('theator/graph') ? 'active' : '' }}">Graph</a>
-                            </li>
-                        </ul>
-                    </div>
+                    </a>
                 </li>
 
                 <li class="nav-item">
