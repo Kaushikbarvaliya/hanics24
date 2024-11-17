@@ -8,8 +8,8 @@ use Illuminate\Support\Facades\Log;
 
 class ViewTheatorGraph extends Component
 {
-    public $selectedTheater = null;
-    public $selectedScreen = null;
+    public $selectedTheater = '';
+    public $selectedScreen = '';
     public $screens = [];
     public $theaters = [];
     public $graphData = false;
@@ -37,6 +37,8 @@ class ViewTheatorGraph extends Component
                     $this->fill([
                         'theaters' => $theaters
                     ]);
+                    $this->selectedTheater = array_key_first($theaters);
+                    $this->updatedSelectedTheater($this->selectedTheater);
                 }else{
                     Log::warning('API call success but not data fetch: ' . json_encode($responseData));
                 }
@@ -59,7 +61,9 @@ class ViewTheatorGraph extends Component
             ->toArray();
             $this->screens = !empty($screens) ? $screens: [];
             $this->selectedTheater = $theaterId;
-            $this->selectedScreen = null;
+            $firstScreenSelect = !empty($this->screens) ? reset($this->screens) : false;
+            $this->selectedScreen = $firstScreenSelect;
+            !empty($firstScreenSelect) ? $this->updatedSelectedScreen($firstScreenSelect['cloud_screen_id']) : '';
         } catch (\Exception $e) {
             Log::error('API call failed: ' . $e->getMessage());
         }
@@ -101,6 +105,7 @@ class ViewTheatorGraph extends Component
                         })
                         ->toArray();
                         $returnData  = [
+                            'screenData' => $screenValue,
                             'maxColumn' => $screenValue['num_cols']??0,
                             'data' => ($graphValues??[])
                         ];

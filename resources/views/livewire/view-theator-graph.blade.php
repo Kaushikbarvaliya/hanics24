@@ -4,15 +4,14 @@
             <div class="mb-3">
                 <label for="theater" class="form-label">Choose Theater</label>
                 <select class="form-select" id="theater" name="theater" aria-label="Select a Theater" wire:model.live="selectedTheater">
-                    <option selected>Select a Theater</option>
                     @foreach($theaters as $id => $name)
-                        <option value="{{ $id }}">{{ $name }}</option>
+                        <option value="{{ $id }}" @if($loop->first) selected @endif>{{ $name }}</option>
                     @endforeach
                 </select>
             </div>
             <div class="mb-3">
                 @if($selectedTheater && count($screens) > 0)
-                    <div class="form-group mt-3">
+                    <div class="form-group mt-3" wire:key="radio-group">
                         <label>Available Screens:</label><br>
                         @foreach($screens as $screen)
                             <div>

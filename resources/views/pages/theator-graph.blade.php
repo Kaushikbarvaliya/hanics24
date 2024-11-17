@@ -89,7 +89,7 @@ Graph
                 useFillColorAsStroke: true,
                 colorScale: {
                     ranges: [
-                        { from: -100, to: 0 , color: '#128FD9', name: 'Available' },
+                        { from: -100, to: 0 , color: '#f4f4f4', name: 'Available' },
                         { from: 1, to: 100 , color: '#00A100', name: 'Booked' },
                     ]
                 }
@@ -133,6 +133,9 @@ Graph
                         categories: Array.from({ length: responseData.maxColumn }, (_, i) => `${i + 1}`)
                     }
                 });
+                if(responseData.screenData){
+                    $('input[id^="screen"][value="'+responseData.screenData.cloud_screen_id+'"]').prop('checked',true);
+                }
             },5);
         }
     });
