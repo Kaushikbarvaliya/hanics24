@@ -14,10 +14,10 @@
                 @if($selectedTheater && count($screens) > 0)
                     <div class="form-group mt-3">
                         <label>Available Screens:</label><br>
-                        @foreach($screens as $id => $screen)
+                        @foreach($screens as $screen)
                             <div>
-                                <input type="radio" id="screen-{{ $id }}" value="{{ $id }}" wire:model.live="selectedScreen">
-                                <label for="screen-{{ $id }}">{{ $screen }}</label>
+                                <input type="radio" id="screen-{{ $screen['cloud_screen_id'] }}" value="{{ $screen['cloud_screen_id'] }}" wire:model.live="selectedScreen">
+                                <label for="screen-{{ $screen['cloud_screen_id'] }}">{{ $screen['screen_name'] }}</label>
                             </div>
                         @endforeach
                     </div>

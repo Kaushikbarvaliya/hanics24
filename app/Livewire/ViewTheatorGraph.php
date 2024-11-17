@@ -28,6 +28,7 @@ class ViewTheatorGraph extends Component
                 'api_token' => getApiToken(),
                 'client_token' => getClientToken(),
             ]);
+            
             // Check for a successful response
             if ($response->successful()) {
                 $responseData = $response->json();
@@ -37,7 +38,6 @@ class ViewTheatorGraph extends Component
                     $this->fill([
                         'theaters' => $theaters
                     ]);
-                    $this->dispatch('graphDataUpdated', ($this->graphData??[]));
                 }else{
                     Log::warning('API call success but not data fetch: ' . json_encode($responseData));
                 }
@@ -56,10 +56,9 @@ class ViewTheatorGraph extends Component
                 return $data['theater_id'] == $theaterId; // Filter by the desired theater ID
             })
             ->flatMap(function ($data) {
-                return collect($data['screens'])->pluck('screen_name', 'cloud_screen_id');
+                return collect($data['screens']);
             })
             ->toArray();
-            echo "<pre>"; print_r($screens); echo "</pre>"; exit();
             $this->screens = !empty($screens) ? $screens: [];
             $this->selectedTheater = $theaterId;
             $this->selectedScreen = null;
@@ -87,15 +86,29 @@ class ViewTheatorGraph extends Component
                 $responseData = $response->json();
                 if(!empty($responseData) && !empty($responseData['screens'])){
                     $screenData = $responseData['screens'];
-                    echo "<pre>"; print_r($screenId); echo "</pre>";
-                    echo "<pre>"; print_r($selectedTheater); echo "</pre>";
                     $getScreeenValue = collect($screenData)
                         ->filter(function ($data) use ($screenId,$selectedTheater) {
                             return $data['cloud_screen_id'] == $screenId && $data['cloud_theater_id'] == $selectedTheater;
                         })
                         ->toArray();
-                    echo "<pre>"; print_r($getScreeenValue); echo "</pre>"; exit();
-                }else{
+                    $screenValue = !empty($getScreeenValue) ?  reset($getScreeenValue) : [];
+                    if(!empty($screenValue)){
+                        $jsonArray = $screenValue['layout'];
+                        $graphValues = collect($jsonArray)->map(function ($item) {
+                            preg_match('/([A-Za-z]+)(\d+)/', $item, $matches);
+                            return [
+                                'label' => $matches[1] ?? null, // Alphabet part
+                                'value' => $matches[2] ?? null    // Numeric part
+                            ];
+                        })
+                        ->toArray();
+                        $returnData  = [
+                            'maxColumn' => $screenValue['num_cols']??0,
+                            'data' => ($graphValues??[])
+                        ];
+                        $this->dispatch('graphDataUpdated', $returnData);
+                    }
+                }else{ 
                     Log::warning('API call success but not data fetch: ' . json_encode($responseData));
                 }
             }
