@@ -40,6 +40,11 @@ div.dt-bootstrap5.dt-container.dt-empty-footer .dt-scroll-body {
     margin-bottom: -10px;
 }
 
+.available-list{
+    display: flex;
+    gap: 10px;
+}
+
 .available-list__item {
     position: relative;
 }
