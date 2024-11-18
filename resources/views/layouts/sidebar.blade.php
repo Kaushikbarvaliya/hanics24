@@ -40,8 +40,8 @@
 
                 <li class="menu-title"><i class="ri-more-fill"></i> <span>@lang('translation.pages')</span></li>
 
-                <li class="nav-item  {{ Request::is('theator/list', 'theator/graph') ? 'active' : '' }}">
-                    <a class="nav-link menu-link {{ Request::is('theator/graph') ? 'active' : '' }}" href="{{route('theator.graph')}}">
+                <li class="nav-item  {{ Request::is('theators') ? 'active' : '' }}">
+                    <a class="nav-link menu-link {{ Request::is('theators') ? 'active' : '' }}" href="{{route('theators')}}">
                         <i class="ri-apps-2-line"></i> <span>Theaters</span>
                     </a>
                 </li>

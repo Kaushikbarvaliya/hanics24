@@ -26,6 +26,7 @@ Route::get('/', [App\Http\Controllers\HomeController::class, 'root'])->name('roo
 Route::post('/update-profile/{id}', [App\Http\Controllers\HomeController::class, 'updateProfile'])->name('updateProfile');
 Route::post('/update-password/{id}', [App\Http\Controllers\HomeController::class, 'updatePassword'])->name('updatePassword');
 
+Route::get('theators', [App\Http\Controllers\TheatorController::class, 'index'])->name('theators');
 Route::get('{any}', [App\Http\Controllers\HomeController::class, 'index'])->name('index');
 
 
@@ -33,7 +34,6 @@ Route::get('auth/google', [GoogleController::class, 'redirectToGoogle'])->name('
 Route::get('auth/google/callback', [GoogleController::class, 'handleGoogleCallback'])->name('auth.google.callback');
 
 // pages
-Route::get('theator/list', [App\Http\Controllers\TheatorController::class, 'index'])->name('theator.list');
-Route::get('theator/graph', [App\Http\Controllers\TheatorController::class, 'graph'])->name('theator.graph');
+// Route::get('theator/graph', [App\Http\Controllers\TheatorController::class, 'graph'])->name('theator.graph');
 Route::get('device/list', [App\Http\Controllers\DeviceController::class, 'index'])->name('device.list');
 Route::get('service/list', [App\Http\Controllers\ServiceController::class, 'index'])->name('service.list');
