@@ -21,10 +21,6 @@ class TheatorController extends Controller
      */
     public function index(Request $request)
     {
-        return view('pages/theators-list');
-    }
-
-    public function graph(Request $request){
         return view('pages/theator-graph');
     }
 }

@@ -12,14 +12,8 @@
 @slot('li_1')
 Dashboard
 @endslot
-@slot('li_2')
-Theators
-@endslot
-@slot('li_2_link')
-{{route('theator.list')}}
-@endslot
 @slot('title')
-Graph
+Theators
 @endslot
 @endcomponent
 <div class="row">
